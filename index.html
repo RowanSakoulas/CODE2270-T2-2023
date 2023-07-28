@@ -51,15 +51,15 @@
 
         // Geometry
         const loader = new GLTFLoader();
-        loader.load('model/scene.gltf', function (gltf) {
+        loader.load('model/Strawberry.gltf', function (gltf) {
             scene.add(gltf.scene);
         }, undefined, function ( error ) {
             console.error( error );
         });
 
         // lights
-        const directionalLight = new THREE.DirectionalLight(0xff0000, 10); // Color: white, Intensity: 1
-        directionalLight.position.set(1, 2, 3); // Set the light's position
+        const directionalLight = new THREE.DirectionalLight(0xffff00, 20); // Color: white, Intensity: 1
+        directionalLight.position.set(10, 2, 6); // Set the light's position
         scene.add(directionalLight);
 
         //Scene

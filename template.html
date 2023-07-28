@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="css/temp_style.css">
+</head>
+<body>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1223.0.js"></script>
+<script src="/loadS3.js"></script>
+<script>listFiles();</script>
+<script src="/js/three.js"></script>
+<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.138.3/build/three.module.js"
+        }
+    }
+</script>
+
+<div class="heading">Template Page Style</div>
+
+</div>
+    <div class="menu">
+        <a href="template.html">
+            <div class="individual-id">
+            HOME
+            </div>
+        </a>
+        <div class="individual-id">
+            3D VIEWER
+        </div>
+        <div class="individual-id">
+            Drawings
+        </div>
+        <div class="individual-id">
+            Schedules & Costs
+        </div>
+    </div>
+    <ul class="main-content">
+        <li class="flex-item"><div class="canvas">
+            <div id="frame"></div>
+            <script type="module">
+                import * as THREE from 'three';
+                import { GLTFLoader } from 'https://unpkg.com/three@0.138.3/examples/jsm/loaders/GLTFLoader.js';
+                import { OrbitControls } from 'https://unpkg.com/three@0.138.3/examples/jsm/controls/OrbitControls.js';
+
+                // Getting dimensions of div ID "frame"
+                let box = document.querySelector('.canvas');
+                let width = box.offsetWidth;
+                let height = box.offsetHeight;
+                const container = document.getElementById('frame');
+
+                // Scene setup
+                const scene = new THREE.Scene();
+
+                // const camera = new THREE.PerspectiveCamera( 60, width / height, 1, 10000 );
+                const camera = new THREE.OrthographicCamera( width / - 70, width / 70, height / 70, height / - 80, -200, 200 );
+
+                // Renderer setup and appending to 'frame'
+                const renderer = new THREE.WebGLRenderer( { antialias: true } );
+                renderer.setPixelRatio ( window.devicePixelRatio );
+                renderer.setSize( width, height );
+                container.appendChild( renderer.domElement )
+
+                // Geometry
+                const loader = new GLTFLoader();
+                loader.load('model/scene.gltf', function (gltf) {
+                    scene.add(gltf.scene);
+                }, undefined, function ( error ) {
+                    console.error( error );
+                });
+
+                // lights
+                const directionalLight = new THREE.DirectionalLight(0xffff00, 20); // Color: white, Intensity: 1
+                directionalLight.position.set(10, 2, 6); // Set the light's position
+                scene.add(directionalLight);
+
+                //Scene
+                scene.background = new THREE.Color(255, 255, 255)
+                camera.position.set( 1, 1, 3 );
+
+                //Control
+                const controls = new OrbitControls(camera, renderer.domElement);
+                controls.update();
+
+                function animate() {
+                    requestAnimationFrame( animate );
+                    controls.update();
+                    renderer.render( scene, camera );
+                }
+                animate();
+            </script>
+        </div></li>
+        <li class="flex-item"><h1>SCENE VIEWER</h1>
+            <p>
+                Suspendisse elementum euismod elementum. Nunc accumsan lorem vel sagittis dignissim. Ut rutrum placerat quam, eget gravida lacus semper sit amet. Morbi at ultricies justo. Integer lobortis dictum efficitur. Praesent tempus mattis eros ut hendrerit. Nunc porttitor lorem nec odio feugiat, quis semper lacus rhoncus. Mauris vitae libero orci. Pellentesque ornare nisi sit amet leo maximus gravida. Sed euismod arcu vitae condimentum iaculis. Ut fermentum tellus vel gravida venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque at ex vel dui placerat mattis id ut quam. In gravida porta justo, a convallis eros efficitur lobortis.
+
+                Aliquam pellentesque metus magna, id dignissim orci consectetur ac. Mauris accumsan dui eu dui varius, vitae bibendum libero euismod. Aenean tempus neque id leo convallis, nec fringilla est vehicula. Curabitur at finibus elit. Ut lorem purus, laoreet quis dapibus quis, sollicitudin eget enim. Cras sollicitudin semper nisl nec ornare. Integer hendrerit euismod ligula sed convallis. Pellentesque non nisl dictum, interdum nibh vitae, viverra metus. Praesent vestibulum, tellus in pretium pulvinar, est enim elementum augue, ut dignissim risus mi vitae turpis. Donec lobortis venenatis magna finibus imperdiet. Morbi convallis molestie nulla in tincidunt. Aliquam posuere, ligula eget vulputate finibus, elit ligula pharetra ligula, ac condimentum dolor augue nec urna. Quisque eu risus sit amet arcu consequat maximus.</p>
+        </li>
+    </ul>
+</body>
+</html>
