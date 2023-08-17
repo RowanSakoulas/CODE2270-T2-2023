@@ -1,6 +1,6 @@
 .canvas{
     position: center;
-    height:848px;
+    height:750px;
     width:1696px;
 }
 
@@ -33,7 +33,7 @@ body {
     .app-div {
       background-color: rgb(240, 171, 126);
       width: 100%;
-      height: 970px;
+      height: 870px;
       border-radius: 33px;
       border: 3px solid rgb(233, 136, 72);
     }
@@ -103,3 +103,75 @@ body {
       padding: 5px 14px;
     }
     
+    .report-div {
+      background-color: rgb(240, 171, 126);
+      width: 100%;
+      height: 570px;
+      border-radius: 33px;
+      border: 3px solid rgb(233, 136, 72);
+      flex-basis: calc(50% - 20px);
+      margin-bottom: 20px;
+    }
+
+    .report-div img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      padding: 4px;
+  }
+
+  .clash-div {
+    background-color: rgb(240, 171, 126);
+    width: 100%;
+    padding-bottom: 20px;
+    border-radius: 33px;
+    border: 3px solid rgb(233, 136, 72);
+    flex-basis: calc(50% - 20px);
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  .clash-div table {
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    padding-left: 33%;
+    font-size: xx-small;
+}
+
+.schedule-div {
+  background-color: rgb(240, 171, 126);
+  width: 100%;
+  height: 955px;
+  border-radius: 33px;
+  border: 3px solid rgb(233, 136, 72);
+  flex-basis: calc(50% - 20px);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.schedule-div img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding: 4px;
+}
+
+.analysis-div {
+  background-color: rgb(240, 171, 126);
+  width: 100%;
+  height: 2600px;
+  border-radius: 33px;
+  border: 3px solid rgb(233, 136, 72);
+  flex-basis: calc(50% - 20px);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.analysis-div img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding: 4px;
+}
