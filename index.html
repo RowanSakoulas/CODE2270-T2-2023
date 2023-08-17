@@ -25,11 +25,10 @@
   <ul class="nav-links">
 
     <div class="menu">
-
       <li><a href="index.html">Model Viewer</a></li>
-      <li><a href="plans.html">Plans</a></li>
-      <li><a href="analysis.html">Analysis</a></li>
-      <li><a href="schedules.html">Schedules</a></li>
+      <li><a href="page2.html">Plans</a></li>
+      <li><a href="page4.html">Analysis</a></li>
+      <li><a href="page5.html">Schedules</a></li>
     </div>
   </ul>
 </nav>
@@ -80,9 +79,11 @@
               });
 
               // lights
-              const directionalLight = new THREE.DirectionalLight(0xff0000, 20); // Color: white, Intensity: 1
+              const directionalLight = new THREE.DirectionalLight(0xfffff0, 20); // Color: white, Intensity: 1
               directionalLight.position.set(10, 2, 6); // Set the light's position
               scene.add(directionalLight);
+              const light = new THREE.AmbientLight(0x404040, 2); // soft white light
+              scene.add( light );
 
               //Scene
               scene.background = new THREE.Color(255, 255, 255)
