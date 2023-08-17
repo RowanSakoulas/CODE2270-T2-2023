@@ -1,23 +1,141 @@
-.titleBlock {
-    /* This is a comment */
-    width:80vw;
-    /*background:red;*/
-    margin-left: 10vw;
-    line-height: 1px;
-    margin-top:50px;
-}
-
-h1, h2 {
-    color:blue;
-}
-
-h2 {
-    font-size: 20px;
-}
-
 .canvas{
-    height:80vh;
-    width:80vw;
-    background:yellow;
-    margin-left:10vw;
+    position: center;
+    height:848px;
+    width:1696px;
 }
+
+body {
+    background-color: rgb(255, 237, 224);
+  }
+  
+  .main {
+      margin-top: 20px;
+      margin-left: 100px;
+      margin-right: 100px;
+      color: black
+    }
+  
+    .title-text {
+      margin-left: 20px;
+      padding-top: 20px;
+      border-bottom: 3px solid black;
+      width: 97%;
+      display: block;
+    }
+  
+   .container {
+      position: absolute;
+      width: 68%;
+      height: 154%;
+      justify-content: center;
+    }
+    
+    .app-div {
+      background-color: rgb(240, 171, 126);
+      width: 100%;
+      height: 970px;
+      border-radius: 33px;
+      border: 3px solid rgb(233, 136, 72);
+    }
+  
+  
+    .bodyarea-div {
+      width: 80%;
+      min-height:800px;
+      position: absolute;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      }
+    
+    body {
+      font-family: helvetica;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    li {
+      list-style: none;
+    }
+  
+  .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgb(233, 136, 72);
+      color: black;
+      position: relative;
+      top: 0;
+      width: 100%;
+    }
+    
+    .nav-links a {
+      color: black;
+    }
+    
+    /* LOGO */
+    .logo {
+      font-size: 36px;
+      font-weight: bold;
+    }
+    
+    /* NAVBAR MENU */
+    .menu {
+      display: flex;
+      gap: 1em;
+      font-size: 24px;
+    }
+    
+    .menu li:hover {
+      background-color: rgb(76, 129, 150);
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+    
+    .menu li {
+      padding: 5px 14px;
+    }
+    
+    /* DROPDOWN MENU */
+    .services {
+      position: relative;
+    }
+    
+    .dropdown {
+      background-color: rgb(76, 129, 150);
+      padding: 1em 0;
+      position: absolute;
+      display: none;
+      border-radius: 8px;
+      top: 30px;
+  
+      left: 50%;
+      right: auto;
+      text-align: center;
+      transform: translate(-50%, 0);
+      z-index:10;
+    }
+    
+    .dropdown li + li {
+      margin-top: 10px;
+    }
+    
+    .dropdown li {
+      padding: 0.5em 1em;
+      width: 8em;
+      text-align: center;
+    }
+    
+    .dropdown li:hover {
+      background-color: #4c9e9e;
+    }
+    
+    .services:hover .dropdown {
+      display: block;
+    }
